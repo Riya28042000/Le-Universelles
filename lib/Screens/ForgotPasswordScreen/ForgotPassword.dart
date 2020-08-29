@@ -50,7 +50,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                child: TextF(
                  hint: "Email",
                  label: "Email",
-                 obs: false,
+                 obs: false  ,
                  con: eml,
                ),
              ),
