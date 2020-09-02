@@ -17,7 +17,7 @@ class SaleList extends StatelessWidget {
         physics: NeverScrollableScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: MediaQuery.of(context).size.height / 1430,
+            childAspectRatio: MediaQuery.of(context).size.height / 1480,
             crossAxisSpacing: ScreenUtil().setWidth(16)),
         itemBuilder: (_, index) => Container(
           child: Column(

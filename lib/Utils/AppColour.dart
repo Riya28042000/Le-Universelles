@@ -12,4 +12,5 @@ class AppColors {
     static const Color text8= Color(0xffBEA9A9);
     static const Color text9= Color(0xffE2BB8D);
     static const Color text10= Color(0xff151867);
+    static const Color text11= Color(0xff2AA952);
 }

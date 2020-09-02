@@ -3,7 +3,7 @@ import'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:le_universelles/Screens/NavigationBar.dart/Navigation.dart';
 import 'package:le_universelles/Utils/Themes.dart';
-import 'package:le_universelles/Screens/Splash/SplashScreen.dart';
+
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
