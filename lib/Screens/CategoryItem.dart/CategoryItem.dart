@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:le_universelles/Components/SaleList.dart';
+import 'package:le_universelles/Screens/AddressDetail/AddressDetail.dart';
 import 'package:le_universelles/Screens/AddressScreen/Address.dart';
 import 'package:le_universelles/Screens/FilterScreen/Filters.dart';
+import 'package:le_universelles/Screens/MyOrderScreen/MyOrder.dart';
+import 'package:le_universelles/Screens/MyProfile/MyProfile.dart';
 import 'package:le_universelles/Screens/SigninScreen/Signin.dart';
 import 'package:le_universelles/Screens/SuccessScreen/Success.dart';
+import 'package:le_universelles/Screens/VerificationScreen/Verification.dart';
 import 'package:le_universelles/Utils/AppColour.dart';
 import 'package:le_universelles/Utils/LaUniversellesConstants.dart';
 import 'package:le_universelles/Utils/SearchBox.dart';
@@ -171,7 +175,7 @@ class _CategoryItemState extends State<CategoryItem> {
                             Text("Sort By",style: _theme.textTheme.headline3,),
                                 Spacer(),
                                  IconButton(icon: Icon(Icons.view_list ), onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Address()));
+                          Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => MyOrder()));
                                  }),
                       ],
                   ),
