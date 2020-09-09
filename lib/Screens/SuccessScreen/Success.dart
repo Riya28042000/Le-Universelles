@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:le_universelles/Components/BlackButton.dart';
+import 'package:le_universelles/Screens/NavigationBar.dart/Navigation.dart';
 import 'package:le_universelles/Utils/AppColour.dart';
 import 'package:le_universelles/Utils/LaUniversellesConstants.dart';
 
@@ -34,7 +35,7 @@ class _SuccessState extends State<Success> {
                   Text("Thank you for choosing our app!",style: _theme.textTheme.headline6),
                    SizedBox(height:ScreenUtil().setHeight(49)),
                    Padding(padding: EdgeInsets.symmetric(horizontal:LaUniversellesConstants.horizontalPadding),
-                   child: BlackButton(buttonText: 'CONTINUE SHOPPING'),
+                   child: BlackButton(buttonText: 'CONTINUE SHOPPING',onButtonTap: (){Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => NavigationBar()));},),
                    ),
                     SizedBox(height:ScreenUtil().setHeight(186)),
                      Text(

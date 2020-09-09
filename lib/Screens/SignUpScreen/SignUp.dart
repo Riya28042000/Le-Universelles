@@ -160,7 +160,7 @@ class _SignUpState extends State<SignUp> {
                       child: Image.asset('assets/images/Google.png'),
                     ),
                   ),
-                  SizedBox(width: ScreenUtil().setWidth(16)),
+             Spacer(),
                   GestureDetector(
                     child: Container(
                       width: ScreenUtil().setWidth(92),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:le_universelles/Components/BlackButton.dart';
+import 'package:le_universelles/Screens/SignUpScreen/SignUp.dart';
+import 'package:le_universelles/Screens/SigninScreen/Signin.dart';
 import 'package:le_universelles/Utils/AppColour.dart';
 import 'package:le_universelles/Utils/LaUniversellesConstants.dart';
 
@@ -42,7 +44,9 @@ class _FavoutiteState extends State<Favoutite> {
                        SizedBox(height: ScreenUtil().setHeight(49),),
                        Padding(
                          padding: const EdgeInsets.symmetric(horizontal: LaUniversellesConstants.horizontalPadding),
-                         child: BlackButton(buttonText: "SIGN IN"),
+                         child: BlackButton(buttonText: "SIGN IN",onButtonTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SignIn()));
+                         },),
                        ),
                               SizedBox(height: ScreenUtil().setHeight(14),),
                               Align(alignment:Alignment.center,child:Row(
@@ -50,7 +54,10 @@ class _FavoutiteState extends State<Favoutite> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                     Text("Don't have an account?",style: _theme.textTheme.headline5.copyWith(fontSize:19, color: AppColors.text5),),
-                                   GestureDetector(onTap:null,
+                                   GestureDetector(onTap:(){
+
+                                     Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SignUp()));
+                                   },
                                    child:  Text(" Create One!",style: _theme.textTheme.headline5.copyWith(fontSize:19,),),
                                   )
                                 ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:le_universelles/Screens/AddressScreen/Address.dart';
 import 'package:le_universelles/Utils/AppColour.dart';
 import 'package:le_universelles/Utils/LaUniversellesConstants.dart';
 
@@ -35,7 +36,7 @@ class _AddressDetailState extends State<AddressDetail> {
           ),
           backgroundColor: _theme.appBarTheme.color),
       backgroundColor: _theme.appBarTheme.color,
-      floatingActionButton: FloatingActionButton(onPressed: null,child: Icon(Icons.add, color: AppColors.text1,),backgroundColor: AppColors.text2,foregroundColor: AppColors.text2,elevation: 0.0,),
+      floatingActionButton: FloatingActionButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => Address()));},child: Icon(Icons.add, color: AppColors.text1,),backgroundColor: AppColors.text2,foregroundColor: AppColors.text2,elevation: 0.0,),
       body: SingleChildScrollView(
      //   physics: AlwaysScrollableScrollPhysics(),
                 child: Column(

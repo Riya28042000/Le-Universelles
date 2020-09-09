@@ -20,12 +20,20 @@ class _SignInState extends State<SignIn> {
     final _theme = Theme.of(context);
     return Scaffold(
       resizeToAvoidBottomInset: false,
+      appBar: AppBar(
+        backgroundColor: _theme.appBarTheme.color,
+        leading: IconButton(icon: Icon(Icons.arrow_back), onPressed: (){
+          Navigator.of(context).pop();
+        }),
+      ),
+              backgroundColor: _theme.appBarTheme.color,
       body: SingleChildScrollView(
+
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: ScreenUtil().setHeight(117)),
+            SizedBox(height: ScreenUtil().setHeight(30)),
             Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: LaUniversellesConstants.horizontalPadding),
@@ -76,7 +84,7 @@ class _SignInState extends State<SignIn> {
                           size: 24,
                           color: AppColors.text2,
                         ),
-                        onPressed: null)
+                        onPressed:(){Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => ForgotPassword()));})
                   ],
                 ),
               ),
@@ -101,10 +109,13 @@ class _SignInState extends State<SignIn> {
                       "Don't have account ? ",
                       style: _theme.textTheme.headline6,
                     ),
-                    Text(
-                      "Create One!",
-                      style: _theme.textTheme.headline6
-                          .copyWith(fontWeight: FontWeight.w700),
+                    GestureDetector(
+onTap: (){Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => SignUp()));},
+                                          child: Text(
+                        "Create One!",
+                        style: _theme.textTheme.headline6
+                            .copyWith(fontWeight: FontWeight.w700),
+                      ),
                     )
                   ],
                 ),
@@ -136,7 +147,7 @@ class _SignInState extends State<SignIn> {
                       child: Image.asset('assets/images/Google.png'),
                     ),
                   ),
-                  SizedBox(width: ScreenUtil().setWidth(16)),
+                  Spacer(),
                   GestureDetector(
                     child: Container(
                       width: ScreenUtil().setWidth(92),

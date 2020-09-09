@@ -6,6 +6,7 @@ import 'package:le_universelles/Screens/CategoryScreen/Category.dart';
 import 'package:le_universelles/Screens/FavouriteScreen/Favourites.dart';
 import 'package:le_universelles/Screens/HomeScreen/Home.dart';
 import 'package:le_universelles/Utils/AppColour.dart';
+import 'package:le_universelles/Utils/la_universelles_icons_icons.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 class NavigationBar extends StatefulWidget {
   @override
@@ -45,23 +46,23 @@ class _NavigationBarState extends State<NavigationBar> {
        currentIndex: _currentIndex, // new
        items: [
          new BottomNavigationBarItem(
-           icon: Icon(Icons.home),
+           icon: Icon(LaUniversellesIcons.home),
            title: Text('Home',style: _theme.textTheme.headline2,),
          ),
          new BottomNavigationBarItem(
-           icon: Icon(MdiIcons.viewComfy),
+           icon: Icon(LaUniversellesIcons.category),
            title: Text('Categories',style: _theme.textTheme.headline2,),
          ),
          new BottomNavigationBarItem(
-           icon: Icon(MdiIcons.bagPersonal),
+           icon: Icon(LaUniversellesIcons.bag),
            title: Text('Bag',style: _theme.textTheme.headline2,)
          ),
            new BottomNavigationBarItem(
-           icon: Icon(MdiIcons.heartOutline),
+           icon: Icon(LaUniversellesIcons.heart),
            title: Text('Favourite',style: _theme.textTheme.headline2,)
          ),
            new BottomNavigationBarItem(
-           icon: Icon(MdiIcons.accountOutline,),
+           icon: Icon(LaUniversellesIcons.person),
            title: Text('Accounts',style: _theme.textTheme.headline2,)
          )
        ],

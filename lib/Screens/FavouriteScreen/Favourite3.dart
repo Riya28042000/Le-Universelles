@@ -1,55 +1,44 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:le_universelles/Components/SaleList.dart';
-import 'package:le_universelles/Screens/FavouriteScreen/Favourite2.dart';
+import 'package:flutter_screenutil/screenutil.dart';
+import 'package:le_universelles/Components/Fav3Card.dart';
 import 'package:le_universelles/Screens/FilterScreen/Filters.dart';
-import 'package:le_universelles/Screens/ProductScreen/ProductScreen.dart';
 import 'package:le_universelles/Utils/AppColour.dart';
 import 'package:le_universelles/Utils/LaUniversellesConstants.dart';
 import 'package:le_universelles/Utils/SearchBox.dart';
 
-class CategoryItem extends StatefulWidget {
+class Favourite3 extends StatefulWidget {
   @override
-  _CategoryItemState createState() => _CategoryItemState();
+  _Favourite3State createState() => _Favourite3State();
 }
 
-class _CategoryItemState extends State<CategoryItem> {
- 
-  @override
-  Widget build(BuildContext context) {
-    TextEditingController _controller= TextEditingController();
-     final _theme= Theme.of(context);
-     bool one=false;
+class _Favourite3State extends State<Favourite3> {
+    bool one=false;
      bool two= false;
      bool three= false;
      bool four= false;
      bool five= false;
+  @override
+  Widget build(BuildContext context) {
+    final _theme= Theme.of(context);
     return Scaffold(
-      backgroundColor: AppColors.text1,
+        backgroundColor: AppColors.text1,
      appBar: AppBar(
        centerTitle: false,
        elevation: LaUniversellesConstants.elevation,
-       title: Text("Essentials",textAlign: TextAlign.left,style:  _theme.appBarTheme.textTheme.headline1.copyWith(fontSize:25),),
-        leading: IconButton(icon: Icon(Icons.arrow_back,),onPressed: (){Navigator.of(context).pop();},),
-          backgroundColor: _theme.appBarTheme.color
+       title: Text("Favourites",textAlign: TextAlign.left,style:  _theme.appBarTheme.textTheme.headline1),
+       backgroundColor: _theme.appBarTheme.color
      ),
      body: SingleChildScrollView(
-            child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
+       child: Column(
+         mainAxisAlignment: MainAxisAlignment.start,
+         crossAxisAlignment: CrossAxisAlignment.start,
          children: [
-                     Padding(
-                  padding: const EdgeInsets.only(
-                    left: LaUniversellesConstants.horizontalPadding/2,
-                    right: LaUniversellesConstants.horizontalPadding/2,
-                    top: LaUniversellesConstants.verticalPadding*2.7,
-                    bottom: LaUniversellesConstants.verticalPadding*2.6
-              ),
-                  child: SearchBox(
-                    text: _controller,
-                  )),
-               
-                  Padding(padding:EdgeInsets.symmetric(horizontal: LaUniversellesConstants.horizontalPadding/2) ,
+             SizedBox(height: ScreenUtil().setHeight(27),),
+           Padding(padding: EdgeInsets.symmetric(horizontal: LaUniversellesConstants.horizontalPadding/2),
+           
+           child: SearchBox(),),
+            SizedBox(height: ScreenUtil().setHeight(26),),
+              Padding(padding:EdgeInsets.symmetric(horizontal: LaUniversellesConstants.horizontalPadding/2) ,
                   child: Row(
                  //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -170,24 +159,13 @@ class _CategoryItemState extends State<CategoryItem> {
                             Text("Sort By",style: _theme.textTheme.headline3,),
                                 Spacer(),
                                  IconButton(icon: Icon(Icons.view_list ), onPressed: (){
-                         
+                       
                                  }),
                       ],
                   ),
                   ),
-                  SizedBox(height:ScreenUtil().setHeight(33) ),
-                    Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: LaUniversellesConstants.horizontalPadding / 2),
-                child: Text(
-                  "SHOP FASHION ESSENTIALS",
-                  style: _theme.textTheme.headline4,
-                ),
-              ),
-              SizedBox(height:ScreenUtil().setHeight(27)),
-             GestureDetector(
-               onTap: (){ Navigator.push(context, MaterialPageRoute(builder: (BuildContext context) => ProductScreen()));},
-               child: SaleList()) 
+                          SizedBox(height: ScreenUtil().setHeight(20),),
+                          Fav3()
          ],
        ),
      ),
